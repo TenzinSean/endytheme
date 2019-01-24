@@ -50,7 +50,10 @@
  * @ingroup themeable
  */
 #}
-<div class="layout-container">
+
+{% include directory ~ '/partials/header.html.twig' %}
+
+<div class="container">
   {{ page.primary_menu }}
   {{ page.secondary_menu }}
 
