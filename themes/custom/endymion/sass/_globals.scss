@@ -19,6 +19,13 @@ body{
   @include container(1100px);
 }
 
+.director .actors{
+  strong {
+    font-weight: bold;
+    font-size: 25px;
+  }
+}
+
 
 /* =======================================================================
 ## ++ Cleafix
