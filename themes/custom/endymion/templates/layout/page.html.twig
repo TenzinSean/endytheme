@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Theme override to display a single page.
+ * Default theme implementation to display a single page.
  *
  * The doctype, html, head and body tags are not in this template. Instead they
  * can be found in the html.html.twig template in this directory.
@@ -19,6 +19,11 @@
  * Site identity:
  * - front_page: The URL of the front page. Use this instead of base_path when
  *   linking to the front page. This includes the language domain or prefix.
+ * - logo: The url of the logo image, as defined in theme settings.
+ * - site_name: The name of the site. This is empty when displaying the site
+ *   name has been disabled in the theme settings.
+ * - site_slogan: The slogan of the site. This is empty when displaying the site
+ *   slogan has been disabled in theme settings.
  *
  * Page content (in order of occurrence in the default page.html.twig):
  * - messages: Status and error messages. Should be displayed prominently.
@@ -41,23 +46,14 @@
  *
  * @see template_preprocess_page()
  * @see html.html.twig
+ *
+ * @ingroup themeable
  */
 #}
 
-
-<header class="main-header" role="banner">
-  <div class="container">
-      {{ page.header }}
-
-      <div class="main-navigation">
-          {{ page.main_navigation }}
-      </div>
-  </div>
-</header>
-
+{% include directory ~ '/partials/header.html.twig' %}
 
 <div class="container">
-
   {{ page.primary_menu }}
   {{ page.secondary_menu }}
 
@@ -69,7 +65,6 @@
 
   <main role="main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-
     <div class="layout-content">
       {{ page.content }}
     </div>{# /.layout-content #}

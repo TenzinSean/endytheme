@@ -1,9 +1,7 @@
 {% include directory ~ '/partials/header.html.twig' %}
-
 <div class="container">
   <main role="main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-
     <div class="layout-content">
       <div class="article-list">
         {{ page.content }}
@@ -13,15 +11,17 @@
     {% if page.sidebar %}
       <aside class="layout-sidebar-first" role="complementary">
         {{ page.sidebar }}
+        {{ page.latest_movies }}
       </aside>
     {% endif %}
 
   </main>
 
-  {% if page.footer %}
-    <footer role="contentinfo">
-      {{ page.footer }}
-    </footer>
-  {% endif %}
-
 </div>{# /.layout-container #}
+
+{% if page.footer %}
+  <footer role="contentinfo">
+    this is footer
+    {{ page.footer }}
+  </footer>
+{% endif %}
