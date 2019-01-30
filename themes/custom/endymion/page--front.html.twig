@@ -14,8 +14,20 @@
         {{ page.latest_movies }}
       </aside>
     {% endif %}
-
   </main>
+  <article class="movie">
+    <header>
+      {{ title }}
+    </header>
+
+    <div class="image">
+      {{ field_movie_ }}
+    </div>
+
+    <div class="movie-content">
+      {{ view_node }}
+    </div>
+  </article>
 
 </div>{# /.layout-container #}
 
